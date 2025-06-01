@@ -3,7 +3,7 @@
   "name": "AZ Problem Tracker",
   "version": "0.1",
   "author": "Uday Keshav",
-  "description": "A Chrome Extension to track problems on AZ",
+  "description": "A Chrome Extension that helps us to track problems on AZ",
   "permissions": [
     "storage",
     "tabs"
@@ -34,8 +34,8 @@
   "action": {
     "default_icon": {
       "16": "assets/ext-icon.png",
-      "24": "assets/ext_icon.png",
-      "32": "assets/ext_icon.png"
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
     },
     "default_popup": "popup.html",
     "default_title": "AZ Problem Tracker"
