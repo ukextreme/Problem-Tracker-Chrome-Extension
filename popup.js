@@ -58,22 +58,22 @@ function setControlAttributes(src, handler, parentDiv) {
 }
 
 function onPlay(event) {
-    // const problemUrl = event.target.parentNode.parentNode.getAttribute("url");
-    // window.open(problemUrl, "_blank");
+    const problemUrl = event.target.parentNode.parentNode.getAttribute("url");
+    window.open(problemUrl, "_blank");
 }
 
 function onDelete(event){
-    // const bookmarkItem = event.target.parentNode.parentNode;
-    // const idToRemove = bookmarkItem.getAttribute("bookmark-id");
-    // bookmarkItem.remove();
+    const bookmarkItem = event.target.parentNode.parentNode;
+    const idToRemove = bookmarkItem.getAttribute("bookmark-id");
+    bookmarkItem.remove();
 
-    // deleteItemFromStorage(idToRemove);
+    deleteItemFromStorage(idToRemove);
 }
 
-// function deleteItemFromStorage(idToRemove){
-//     chrome.storage.sync.get([AZ_PROBLEM_KEY], (data) => {
-//         const currentBookmarks = data[AZ_PROBLEM_KEY] || [];
-//         const updatedBookmarks = currentBookmarks.filter((bookmark) => bookmark.id !== idToRemove);
-//         chrome.storage.sync.set({AZ_PROBLEM_KEY : updatedBookmarks});
-//     })
-// }
+function deleteItemFromStorage(idToRemove){
+    chrome.storage.sync.get([AZ_PROBLEM_KEY], (data) => {
+        const currentBookmarks = data[AZ_PROBLEM_KEY] || [];
+        const updatedBookmarks = currentBookmarks.filter((bookmark) => bookmark.id !== idToRemove);
+        chrome.storage.sync.set({AZ_PROBLEM_KEY : updatedBookmarks});
+    })
+}
